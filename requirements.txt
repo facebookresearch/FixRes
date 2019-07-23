@@ -1,0 +1,6 @@
+attrs
+numpy
+torch
+torchvision
+Pillow
+tqdm
