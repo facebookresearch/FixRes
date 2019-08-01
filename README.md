@@ -212,7 +212,7 @@ The corresponding paper is
        year = "2019"}
 ```
 
-Our FixResNeXt-101 32x48d is fine-tune from the weights of the Pytorch Hub page : https://pytorch.org/hub/facebookresearch_WSL-Images_resnext/
+Our FixResNeXt-101 32x48d is fine-tuned from the weights of the Pytorch Hub page : https://pytorch.org/hub/facebookresearch_WSL-Images_resnext/
 
 The corresponding paper is 
 ```
