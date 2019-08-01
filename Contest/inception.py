@@ -5,10 +5,10 @@
 # LICENSE file in the root directory of this source tree.
 #
 
-''''
+'''
 code from https://github.com/Cadene/pretrained-models.pytorch with some adaptations
 
-''''
+'''
 import torch
 import torch.nn as nn
 import torch.utils.model_zoo as model_zoo
