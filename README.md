@@ -10,9 +10,9 @@ The method is described in "Fixing the train-test resolution discrepancy" ([arXi
 BibTeX reference to cite, if you use it:
 ```bibtex
 @inproceedings{touvron2019FixRes,
-       author = {Hugo, Touvron and Vedaldi, Andrea and Douze, Matthijs and J{\'e}gou, Herv{\'e}},
+       author = {Touvron, Hugo and Vedaldi, Andrea and Douze, Matthijs and J{\'e}gou, Herv{\'e}},
        title = {Fixing the train-test resolution discrepancy},
-       booktitle = {Proceedings Advances in Neural Information Processing Systems (NeurIPS)},
+       booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
        year = {2019},
 }
 ```
