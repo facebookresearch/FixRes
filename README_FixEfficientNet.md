@@ -7,28 +7,7 @@ It improves the performance of any convolutional neural network architecture.
 
 The method is described in "Fixing the train-test resolution discrepancy" (links: [arXiv](https://arxiv.org/abs/1906.06423), [NeurIPS](https://papers.nips.cc/paper/9035-fixing-the-train-test-resolution-discrepancy)). 
 
-BibTeX reference to cite, if you use it:
-
-```bibtex
-@inproceedings{touvron2019FixRes,
-       author = {Touvron, Hugo and Vedaldi, Andrea and Douze, Matthijs and J{\'e}gou, Herv{\'e}},
-       title = {Fixing the train-test resolution discrepancy},
-       booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
-       year = {2019},
-}
-```
-
-```
-@misc{touvron2020FixEfficientNet,
-       author = {Touvron, Hugo and Vedaldi, Andrea and Douze, Matthijs and J{\'e}gou, Herv{\'e}},
-       title = {Fixing the train-test resolution discrepancy: FixEfficientNet},
-       journal={arXiv preprint arXiv:2003.08237},
-       year = {2020},
-}
-```
-
 Please notice that our models depend on previous trained models, see [References to other models](#references-to-other-models) 
-
 
 ## ImageNet Results
 
@@ -53,6 +32,23 @@ Please notice that our models depend on previous trained models, see [References
 | FixEfficientNet-B8| 800 |     87.4M   |  85.7 /  97.6 | |
 | FixEfficientNet-L2| 600 |     480M     |  88.5 /  98.7 |x |
 
+```bibtex
+@inproceedings{touvron2019FixRes,
+       author = {Touvron, Hugo and Vedaldi, Andrea and Douze, Matthijs and J{\'e}gou, Herv{\'e}},
+       title = {Fixing the train-test resolution discrepancy},
+       booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+       year = {2019},
+}
+```
+
+```
+@misc{touvron2020FixEfficientNet,
+       author = {Touvron, Hugo and Vedaldi, Andrea and Douze, Matthijs and J{\'e}gou, Herv{\'e}},
+       title = {Fixing the train-test resolution discrepancy: FixEfficientNet},
+       journal={arXiv preprint arXiv:2003.08237},
+       year = {2020},
+}
+```
 
 ## References to other models
 
@@ -81,6 +77,16 @@ For models without extra-training data :
     year="2019",
 }
 ```
+
+```
+@misc{tan2019efficientnet,
+  author    = {Mingxing Tan and Quoc V. Le},
+  title     = "{EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks}",
+  journal   = {arXiv preprint arXiv:1905.11946},
+  year= "2019",
+}
+```
+
 ## License
 FixRes is [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) licensed, as found in the LICENSE file.
 
