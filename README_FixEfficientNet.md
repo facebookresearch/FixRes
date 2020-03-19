@@ -5,7 +5,7 @@
 [FixRes](https://github.com/facebookresearch/FixRes) is a simple method for fixing the train-test resolution discrepancy. 
 It can improve the performance of any convolutional neural network architecture.
 
-The method is described in "Fixing the train-test resolution discrepancy" (links: [arXiv](https://arxiv.org/abs/1906.06423),[NeurIPS](https://papers.nips.cc/paper/9035-fixing-the-train-test-resolution-discrepancy)). 
+The method is described in "Fixing the train-test resolution discrepancy" (links: [arXiv](https://arxiv.org/abs/1906.06423), [NeurIPS](https://papers.nips.cc/paper/9035-fixing-the-train-test-resolution-discrepancy)). 
 
 BibTeX reference to cite, if you use it:
 
@@ -22,7 +22,7 @@ BibTeX reference to cite, if you use it:
 @misc{touvron2020FixEfficientNet,
        author = {Touvron, Hugo and Vedaldi, Andrea and Douze, Matthijs and J{\'e}gou, Herv{\'e}},
        title = {Fixing the train-test resolution discrepancy: FixEfficientNet},
-       journal={{arXiv preprint arXiv:2003.08237}},
+       journal={arXiv preprint arXiv:2003.08237},
        year = {2020},
 }
 ```
@@ -64,10 +64,10 @@ For models with extra-training data :
 
 ```
 @misc{xie2019selftraining,
-	author={Qizhe Xie and Minh-Thang Luong and Eduard Hovy and Quoc V. Le,
+    author={Qizhe Xie and Minh-Thang Luong and Eduard Hovy and Quoc V. Le,
     title="{Self-training with Noisy Student improves ImageNet classification}",
-    journal = {arXiv e-prints},
-    year=2019}
+    journal = {arXiv preprint arXiv:1911.04252},
+    year=2019,
 }
 ```
 
@@ -75,10 +75,10 @@ For models without extra-training data :
 
 ```
 @misc{xie2019adversarial,
-	author={Cihang Xie and Mingxing Tan and Boqing Gong and Jiang Wang and Alan Yuille and Quoc V. Le,
+    author={Cihang Xie and Mingxing Tan and Boqing Gong and Jiang Wang and Alan Yuille and Quoc V. Le,
     title="{Adversarial Examples Improve Image Recognition}",
-    journal = {arXiv e-prints},
-    year="2019"}
+    journal = {arXiv preprint arXiv:1911.09665},
+    year="2019",
 }
 ```
 ## License
