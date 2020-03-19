@@ -5,9 +5,10 @@
 [FixRes](https://github.com/facebookresearch/FixRes) is a simple method for fixing the train-test resolution discrepancy. 
 It improves the performance of any convolutional neural network architecture. 
 
-The method is described in "Fixing the train-test resolution discrepancy" (links: [arXiv](https://arxiv.org/abs/1906.06423), [NeurIPS](https://papers.nips.cc/paper/9035-fixing-the-train-test-resolution-discrepancy)). 
+The method is described in "[Fixing the train-test resolution discrepancy](https://papers.nips.cc/paper/9035-fixing-the-train-test-resolution-discrepancy)" ([More results on arXiv](https://arxiv.org/abs/1906.06423)). 
 
-Please notice that our models depend on previous trained models, see [References to other models](#references-to-other-models) 
+Hereafter we provide more results corresponding to [this note](https://arxiv.org/abs/2003.08237), for Efficient Model. 
+Our models depend on previous trained models, see the [references to other models](#references-to-other-models) 
 
 ## ImageNet Results
 
@@ -54,9 +55,9 @@ Please notice that our models depend on previous trained models, see [References
 
 Model definition scripts and pretrained weights are from https://github.com/rwightman/pytorch-image-models.
 
-The corresponding papers are:
+The corresponding papers are as follows. 
 
-For models with extra-training data :
+For models with extra-training data:
 
 ```
 @misc{xie2019selftraining,
@@ -67,7 +68,7 @@ For models with extra-training data :
 }
 ```
 
-For models without extra-training data :
+For models without extra-training data:
 
 ```
 @misc{xie2019adversarial,
