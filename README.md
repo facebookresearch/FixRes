@@ -5,7 +5,7 @@
 FixRes is a simple method for fixing the train-test resolution discrepancy. 
 It can improve the performance of any convolutional neural network architecture.
 
-The method is described in "Fixing the train-test resolution discrepancy" ([arXiv link](https://arxiv.org/abs/1906.06423)). 
+The method is described in "Fixing the train-test resolution discrepancy" (Links: [arXiv](https://arxiv.org/abs/1906.06423),[NeurIPS](https://papers.nips.cc/paper/9035-fixing-the-train-test-resolution-discrepancy)). 
 
 BibTeX reference to cite, if you use it:
 ```bibtex
@@ -52,8 +52,12 @@ We provide pre-trained networks with differents trunks, we report in the table v
 | FixPNASNet-5 | 480 |     86.1M     |  83.7 /  96.8 | [FixPNASNet.pth](https://dl.fbaipublicfiles.com/FixRes_data/FixRes_Pretrained_Models/PNASNet.pth)  |
 | FixResNeXt-101 32x48d | 320 | 829M |  86.3 / 97.9 |[FixResNeXt101_32x48d.pth](https://dl.fbaipublicfiles.com/FixRes_data/FixRes_Pretrained_Models/ResNeXt_101_32x48d.pth) |
 | FixResNeXt-101 32x48d (*)| 320 | 829M |  86.4 / 98.0 |[FixResNeXt101_32x48d_v2.pth](https://dl.fbaipublicfiles.com/FixRes_data/FixRes_Pretrained_Models/ResNext101_32x48d_v2.pth) |
+| FixEfficientNet-B0 (+)| 320 | 5.3M |  80.2 / 95.4 |[FixEfficientNet](README_FixEfficientNet.md) |
+| FixEfficientNet-L2 (+)| 600 | 480M |  88.5 / 98.7 |[FixEfficientNet](README_FixEfficientNet.md) |
 
 (*)  We use Horizontal flip, shifted Center Crop and color jittering for fine-tuning (described in [transforms_v2.py](transforms_v2.py))
+
+(+) We report different results with our FixEfficientNet (see [FixEfficientNet](README_FixEfficientNet.md) for more details)
 
 To load a network, use the following PyTorch code: 
 
@@ -201,6 +205,8 @@ See the [CONTRIBUTING](CONTRIBUTING.md) file for how to help out.
 
 Model definition scripts are based on https://github.com/pytorch/vision/ and https://github.com/Cadene/pretrained-models.pytorch.
 
+The Training from scratch implementation is based on https://github.com/facebookresearch/multigrain.
+
 Our FixResNet-50 CutMix is fine-tune from the weights of the GitHub page : https://github.com/clovaai/CutMix-PyTorch.
 The corresponding paper is 
 ```
@@ -222,8 +228,30 @@ The corresponding paper is
        year = "2018"}
 ```
 
+For FixEfficientNet we used model definition scripts and pretrained weights from https://github.com/rwightman/pytorch-image-models.
+
+The corresponding papers are:
+
+For models with extra-training data :
+
+```
+@misc{xie2019selftraining,
+	author={Qizhe Xie and Minh-Thang Luong and Eduard Hovy and Quoc V. Le,
+    title="{Self-training with Noisy Student improves ImageNet classification}",
+    journal = {arXiv e-prints},
+    year=2019}
+}
+```
+
+For models without extra-training data :
+
+```
+@misc{xie2019adversarial,
+	author={Cihang Xie and Mingxing Tan and Boqing Gong and Jiang Wang and Alan Yuille and Quoc V. Le,
+    title="{Adversarial Examples Improve Image Recognition}",
+    journal = {arXiv e-prints},
+    year="2019"}
+}
+```
 ## License
 FixRes is [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) licensed, as found in the LICENSE file.
-
-The Training from scratch implementation is based on https://github.com/facebookresearch/multigrain.
-
