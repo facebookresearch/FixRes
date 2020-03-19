@@ -6,7 +6,6 @@
 
 [FixRes](https://github.com/facebookresearch/FixRes) is a simple method for fixing the train-test resolution discrepancy. 
 It improves the performance of any convolutional neural network architecture. 
-
 The method is described in the Neurips paper "[Fixing the train-test resolution discrepancy](https://papers.nips.cc/paper/9035-fixing-the-train-test-resolution-discrepancy)" ([More results on arXiv](https://arxiv.org/abs/1906.06423)). 
 
 Hereafter we provide some results reported in [this note](https://arxiv.org/abs/2003.08237) for EfficientNet models. 
