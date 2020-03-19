@@ -7,8 +7,8 @@ It improves the performance of any convolutional neural network architecture.
 
 The method is described in the Neurips paper "[Fixing the train-test resolution discrepancy](https://papers.nips.cc/paper/9035-fixing-the-train-test-resolution-discrepancy)" ([More results on arXiv](https://arxiv.org/abs/1906.06423)). 
 
-Hereafter we provide more results corresponding to [this note](https://arxiv.org/abs/2003.08237), for Efficient Model. 
-Our models depend on previous trained models, see the [references to other models](#references-to-other-models) 
+Hereafter we provide some results reported in [this note](https://arxiv.org/abs/2003.08237) for EfficientNet models. 
+These models depend on and improve previous trained models, see the [references to other models](#references-to-other-models). 
 
 ## ImageNet Results
 
