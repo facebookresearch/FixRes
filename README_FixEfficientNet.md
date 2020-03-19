@@ -1,6 +1,6 @@
 # FixEfficientNet
 
-<img src="image/Fix-Efficient-Net.png" height="350">
+<img src="image/Fix-Efficient-Net.png" height="450">
 
 [FixRes](https://github.com/facebookresearch/FixRes) is a simple method for fixing the train-test resolution discrepancy. 
 It improves the performance of any convolutional neural network architecture. 
