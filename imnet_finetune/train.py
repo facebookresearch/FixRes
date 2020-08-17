@@ -14,11 +14,19 @@ import torch.optim as optim
 import attr
 from torchvision import datasets
 import torchvision.models as models
+from torch.utils.model_zoo import load_url as load_state_dict_from_url
 import numpy as np
 from .config import TrainerConfig, ClusterConfig
 from .transforms import get_transforms
 from .resnext_wsl import resnext101_32x48d_wsl
 from .pnasnet import pnasnet5large
+try:
+    from timm.models import create_model #From: https://github.com/rwightman/pytorch-image-models
+    has_timm = True
+except ImportError:
+    has_timm = False
+
+    
 
 @attr.s(auto_attribs=True)
 class TrainerState:
@@ -167,14 +175,27 @@ class Trainer:
                 if 'last_linear' not in name and 'cell_11' not in name and 'cell_10' not in name and 'cell_9' not in name:
                     for name2, params in child.named_parameters():
                         params.requires_grad = False
-        else:
+        elif not self._train_cfg.architecture=='EfficientNet' :
             
             for name, child in model.named_children():
                 if 'fc' not in name:
                     for name2, params in child.named_parameters():
                         params.requires_grad = False
     
-        
+        if self._train_cfg.architecture=='EfficientNet' :
+            assert has_timm
+            model = create_model(self._train_cfg.EfficientNet_models,pretrained=False,num_classes=1000) #see https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/efficientnet.py for name
+            model.requires_grad=False
+            pretrained_dict=load_state_dict_from_url(default_cfgs[self._train_cfg.EfficientNet_models]['url'],map_location='cpu')
+            model_dict = model.state_dict()
+            for k in model_dict.keys():
+                if(k in pretrained_dict.keys()):
+                    model_dict[k]=pretrained_dict.get(k)
+            model.load_state_dict(model_dict)
+            torch.cuda.empty_cache()
+            model.classifier.requires_grad=True
+            model.conv_head.requires_grad=True
+            
         model.cuda(self._train_cfg.local_rank)
         model = torch.nn.parallel.DistributedDataParallel(
             model, device_ids=[self._train_cfg.local_rank], output_device=self._train_cfg.local_rank
@@ -208,6 +229,11 @@ class Trainer:
             self._state.model.module.cell_10.eval()
             self._state.model.module.cell_9.eval()
             self._state.model.module.dropout.eval()
+        elif self._train_cfg.architecture=='EfficientNet' :
+            self._state.model.module.classifier.eval()
+            self._state.model.module.conv_head.eval()
+            self._state.model.module.bn2.eval()
+            
         else:
             self._state.model.module.layer4[2].bn3.eval()
             
@@ -241,6 +267,10 @@ class Trainer:
                 self._state.model.module.cell_10.train()
                 self._state.model.module.cell_9.train()
                 self._state.model.module.dropout.train()
+            elif self._train_cfg.architecture=='EfficientNet' :
+                self._state.model.module.classifier.train()
+                self._state.model.module.conv_head.train()
+                self._state.model.module.bn2.train()
             else:
                 self._state.model.module.layer4[2].bn3.train()
                 
@@ -280,6 +310,10 @@ class Trainer:
                     self._state.model.module.cell_10.eval()
                     self._state.model.module.cell_9.eval()
                     self._state.model.module.dropout.eval()
+                elif self._train_cfg.architecture=='EfficientNet' :
+                    self._state.model.module.classifier.eval()
+                    self._state.model.module.conv_head.eval()
+                    self._state.model.module.bn2.eval()
                 else:
                     self._state.model.module.layer4[2].bn3.eval()
                     
