@@ -27,3 +27,4 @@ class TrainerConfig(NamedTuple):
     global_rank: int
     num_tasks: int
     job_id: str
+    EfficientNet_models: str
