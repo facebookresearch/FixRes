@@ -34,13 +34,13 @@ Ours codes were executed on a cluster with several GPUs. As configurations are d
 # Using the code 
 
 The configurations given in the examples provide the results of the Pretrained Networks table (Table 2 in the article). 
-The trainning and fine-tuning codes record the learned model in a checkpoint.pth file.
+The training and fine-tuning codes record the learned model in a checkpoint.pth file.
 
 ## Extracting features with pre-trained networks
 
 ### Pre-trained networks
 
-We provide pre-trained networks with differents trunks, we report in the table validation resolution, Top-1 and Top-5 accuracy on ImageNet validation set:
+We provide pre-trained networks with different trunks, we report in the table validation resolution, Top-1 and Top-5 accuracy on ImageNet validation set:
 
 |  Models  | Resolution | #Parameters | Top-1 / Top-5 |                                        Weights                                         |
 |:---:|:-:|:------------:|:------:|:---------------------------------------------------------------------------------------:|
@@ -136,7 +136,7 @@ python main_evaluate_softmax.py --architecture 'ResNet50' --save-path 'where_sof
 ```
 ### Features extraction
 
-`main_extract.py` exctrat embedding, labels and probability with the networks.
+`main_extract.py` extract embedding, labels and probability with the networks.
  
 ### Example  extraction procedure
 
