@@ -22,6 +22,7 @@ from .resnext_wsl import resnext101_32x48d_wsl
 from .pnasnet import pnasnet5large
 try:
     from timm.models import create_model #From: https://github.com/rwightman/pytorch-image-models
+    from timm.models.efficientnet import default_cfgs
     has_timm = True
 except ImportError:
     has_timm = False
