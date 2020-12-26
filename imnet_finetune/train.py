@@ -186,7 +186,11 @@ class Trainer:
         if self._train_cfg.architecture=='EfficientNet' :
             assert has_timm
             model = create_model(self._train_cfg.EfficientNet_models,pretrained=False,num_classes=1000) #see https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/efficientnet.py for name
-            model.requires_grad=False
+            for name, child in model.named_children():
+                if 'classifier' not in name:
+                    for name2, params in child.named_parameters():
+                        params.requires_grad = False
+                        
             pretrained_dict=load_state_dict_from_url(default_cfgs[self._train_cfg.EfficientNet_models]['url'],map_location='cpu')
             model_dict = model.state_dict()
             for k in model_dict.keys():
